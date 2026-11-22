@@ -1,0 +1,16 @@
+{
+  "name": "cedinook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CediNook \u2014 phone-installable offline-first personal finance and savings tracker",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
+  }
+}

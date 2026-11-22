@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: cedinook
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: APP_ORIGIN
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: valvitrack-db
+          property: connectionString
+      - key: DATA_ENCRYPTION_KEY
+        generateValue: true
+
+databases:
+  - name: valvitrack-db
+    databaseName: valvitrack
+    user: valvitrack
+    plan: free
